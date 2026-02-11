@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # --- CONFIGURACIÓN ---
 # Pega tu cadena de conexión de MongoDB Atlas aquí:
-MONGO_URI = "mongodb+srv://admin:TU_CONTRASEÑA@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = "mongodb+srv://admin:admin@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority"
 
 try:
     client = MongoClient(MONGO_URI)
@@ -49,4 +49,5 @@ def guardar_alerta():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=10000)
